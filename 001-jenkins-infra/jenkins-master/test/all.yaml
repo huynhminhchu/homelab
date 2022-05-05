@@ -1,0 +1,10 @@
+http:
+  routers:
+    allbackendRouter:
+      rule: Host(`http://localhost`)
+      service: allbackend
+  services:
+    allbackend:
+      loadBalancer:
+        servers:
+          - url 'http://localhost:8080/'

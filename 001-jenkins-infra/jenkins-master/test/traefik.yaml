@@ -1,0 +1,22 @@
+#Static configuration
+entryPoints:
+  web:
+    address: ":80"
+
+providers:
+  file:
+    filename: /etc/traefik/all.yaml
+    watch: true
+
+api:
+  insecure: true
+  dashboard: true
+
+log:
+  level: INFO  # DEBUG, INFO, WARNING, ERROR, CRITICAL
+  format: common  # common, json, logfmt
+  filePath: /var/log/traefik/traefik.log
+
+accesslog:
+  format: common  # common, json, logfmt
+  filePath: /var/log/traefik/access.log
